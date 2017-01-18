@@ -20,4 +20,3 @@ Proposed timeline:
 
 5. **30/06/2017** Thesis proposal 
 
-6. João to plan rest of the year
