@@ -6,7 +6,7 @@ Proposed timeline:
 
 	1. Plan (with Daniele) a strategy to broadcast and find users for the front end
 	
-2. **30/03/2017** Norm type identification using SyntaxNet and conflict detection approach
+2. **30/03/2017** Norm type identification using SyntaxNet and conflict detection approaches
 
 	1. **15/03/2017** Norm identification using syntax net
 	
@@ -20,13 +20,13 @@ Proposed timeline:
 
 5. **30/06/2017** Thesis proposal 
 
-6. **30/07/2017** Using the same web front, create a second function that allows people to test our approach online
+6. **30/07/2017** Using the same web front-end, create a second function that allows people to test our approach online
 
 	1. **15/07/2017** Create the front end to receive the application
 	
 	2. **21/07/2017** Connect the application (python) to the site
 	
-	3. **30/07/2017** Improve the tool visualization using diff properties
+	3. **30/07/2017** Improve the tool visualization using diff-like interface
 
 7. **30/08/2017** Write a paper to AAAI-18
 
