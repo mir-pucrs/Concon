@@ -30,9 +30,16 @@ Proposed timeline:
 
 7. **30/08/2017** Write a paper to AAAI-18
 
-8. **30/09/2017** Make experiments using other approaches over the new data, such as the CNN used in the AAMAS-2017 paper (try LSTM)
+8. **30/09/2017** Perform experiments using other approaches over the new data, such as the CNN used in the AAMAS-2017 paper (try LSTM)
 
-9. **30/10/2017** Compare all approaches, since the ruled-based one, using the labelled data
+	1. **15/09/2017** Implement CNN-based approach (from AAMAS-2017)
+	2. **30/09/2017** Implement LSTM-based approach
+
+9. **30/10/2017** Compare all approaches using new labelled data
+	1. **5/10/2017** Rerun tests with rule-based approach
+	2. **10/10/2017** Rerun tests with Sent2Vec + SyntaxNet approach
+	3. **15/10/2017** Rerun tests with CNN and LSTM approaches
+	4. **30/10/2017** Analyse data and write report
 
 10. **30/11/2017** Use the comparison to generate a journal or a paper
 
