@@ -1,0 +1,4 @@
+This is a sentence.
+This is not a sentence.
+This maybe will be a sentence, I'll decide later.
+Ok, this is not a sentence anymore.

@@ -1,0 +1,6 @@
+Total examples: 1027
+
+Accuracy: 0.88
+Precision: 0.91
+Recall: 0.88
+F1-Score: 0.89
