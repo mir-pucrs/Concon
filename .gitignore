@@ -3,3 +3,5 @@
 .h5
 *.bin
 *stanford*
+*_names.txt
+*.npy
