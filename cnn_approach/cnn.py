@@ -13,11 +13,27 @@ from sklearn.cross_validation import train_test_split
 from keras.callbacks import ModelCheckpoint
 from keras.callbacks import Callback
 from keras.callbacks import History
+from keras.callbacks import EarlyStopping
 
 from constants import *
 from preprocess_norms import turn_into_matrix
 
 np.random.seed(789)
+
+
+# Set the gpu to use.
+def _start(gpu):
+    import os
+    import tensorflow as tf
+
+    os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
+    os.environ["CUDA_VISIBLE_DEVICES"]=str(gpu)
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth=True
+    sess = tf.Session(config=config)
+    
+_start(0)
+
 
 def train_cnn(maxlength=200):
 
@@ -38,7 +54,7 @@ def train_cnn(maxlength=200):
 
     # Set net.
     nb_classes = 2
-    nb_epoch = 6
+    nb_epoch = 100000
 
     # X_train = X_train.reshape(X_train.shape[0], maxlength, maxlength, 1)
     # X_val   = X_val.reshape(X_train.shape[0], maxlength, maxlength, 1)
@@ -56,8 +72,9 @@ def train_cnn(maxlength=200):
                                  )
     acc_loss_monitor = History()
 
+    early = EarlyStopping(patience=1, verbose=1)
 
-    model.fit_generator(turn_into_matrix(zip(X_train, Y_train), maxlength), samples_per_epoch=166, nb_epoch=nb_epoch, verbose=1, validation_data=turn_into_matrix(zip(X_val, Y_val), maxlength), nb_val_samples=21, callbacks=[checkpointer, acc_loss_monitor])
+    model.fit_generator(turn_into_matrix(zip(X_train, Y_train), maxlength), samples_per_epoch=166, nb_epoch=nb_epoch, verbose=1, validation_data=turn_into_matrix(zip(X_val, Y_val), maxlength), nb_val_samples=21, callbacks=[checkpointer, acc_loss_monitor, early])
 
     val_accs = acc_loss_monitor.history['val_acc']
     val_loss = acc_loss_monitor.history['val_loss']
