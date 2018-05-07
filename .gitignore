@@ -1,7 +1,9 @@
-.pyc
-.ipynb_checkpoints
-.h5
+*.pyc
+*.ipynb_checkpoints
+*.h5
 *.bin
 *stanford*
 *_names.txt
 *.npy
+*.csv
+*.pkl
